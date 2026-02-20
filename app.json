@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "rnn-expo54-base",
-    "slug": "rnn-expo54-base",
+    "name": "Nequi",
+    "slug": "sv-nequi",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -21,7 +21,9 @@
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "softwareKeyboardLayoutMode": "pan",
+      "package": "sv.nequi"
     },
     "web": {
       "favicon": "./assets/favicon.png"
