@@ -18,6 +18,31 @@ export default function App(props: any) {
       >
         <Text>Go to Second View</Text>
       </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => {
+          Navigation.setRoot({
+            root: {
+              stack: {
+                children: [
+                  {
+                    component: {
+                      id: "com.app.SecondView",
+                      name: "com.app.SecondView",
+                    },
+                  },
+                ],
+                options: {
+                  layout: {
+                    orientation: ["portrait"],
+                  },
+                },
+              },
+            },
+          });
+        }}
+      >
+        <Text>Go to Second Root</Text>
+      </TouchableOpacity>
     </View>
   );
 }

@@ -1,6 +1,9 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
-import { NavigationFunctionComponent } from "react-native-navigation";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  Navigation,
+  NavigationFunctionComponent,
+} from "react-native-navigation";
 
 type IProps = {
   componentId: string;
@@ -11,6 +14,45 @@ const SecondView: NavigationFunctionComponent<IProps> = (props) => {
     <View style={styles.container}>
       <Text>Open up SecondView.tsx</Text>
       <StatusBar style="auto" />
+
+      <TouchableOpacity
+        onPress={() => {
+          Navigation.push(props.componentId, {
+            component: {
+              name: "com.app.ThirdView",
+            },
+          });
+        }}
+      >
+        <Text>Go to Third View</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        onPress={() => {
+          Navigation.setRoot({
+            root: {
+              stack: {
+                children: [
+                  {
+                    component: {
+                      name: "com.app.AppView",
+                      options: {
+                        topBar: {
+                          title: {
+                            text: "App Navigation",
+                          },
+                        },
+                      },
+                    },
+                  },
+                ],
+              },
+            },
+          });
+        }}
+      >
+        <Text>Go to Root</Text>
+      </TouchableOpacity>
     </View>
   );
 };
